@@ -32,7 +32,6 @@ const FLORES_AMARILLAS_LYRICS = [
 export default function AnimatedGarden({ onBack }) {
   const canvasRef = useRef(null);
   const [currentLyric, setCurrentLyric] = useState("");
-  const [showTitulo, setShowTitulo] = useState(true);
 
   // Synchronize lyrics with the playing audio
   useEffect(() => {
@@ -58,14 +57,8 @@ export default function AnimatedGarden({ onBack }) {
       }
     }, 250);
 
-    // Hide title after 15 seconds so the user can enjoy the flowers and lyrics
-    const titleTimeout = setTimeout(() => {
-      setShowTitulo(false);
-    }, 15000);
-
     return () => {
       clearInterval(interval);
-      clearTimeout(titleTimeout);
     };
   }, []);
 
@@ -310,15 +303,6 @@ export default function AnimatedGarden({ onBack }) {
           </div>
         )}
       </div>
-
-      {/* Heartfelt title / Get well wish from Leonardo */}
-      {showTitulo && (
-        <h1 className="titulo">
-          Espero que te mejores de la gripe, Lisaaa 💛
-          <br /><br />
-          Toma este hermoso jardín de flores amarillas para iluminar tu día y hacerte sonreír. ¡Que te mejores pronto! 🌻✨
-        </h1>
-      )}
 
       {/* Night ambience gradient overlay */}
       <div className="night"></div>

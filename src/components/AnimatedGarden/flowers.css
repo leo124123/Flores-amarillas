@@ -102,50 +102,6 @@
   }
 }
 
-.titulo {
-  position: absolute;
-  top: 26%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 88%;
-  max-width: 620px;
-  font-family: var(--font-hand);
-  color: #fed7aa;
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 1.4;
-  letter-spacing: 1px;
-  opacity: 0;
-  animation: fadeInTitulo 2.5s ease-in-out forwards;
-  text-align: center;
-  z-index: 60;
-  background: rgba(15, 10, 5, 0.45);
-  backdrop-filter: blur(6px);
-  padding: 12px 20px;
-  border-radius: 20px;
-  border: 1px solid rgba(251, 191, 36, 0.3);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-  pointer-events: none;
-}
-
-@media only screen and (max-width: 600px) {
-  .titulo {
-    top: 22%;
-    font-size: 1.15rem;
-    padding: 10px 14px;
-  }
-}
-
-@keyframes fadeInTitulo {
-  0% { opacity: 0; transform: translate(-50%, 10px); }
-  100% { opacity: 1; transform: translate(-50%, 0); }
-}
-
-@keyframes fadeOutTitulo {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
 .night {
   display: none !important;
 }
