@@ -103,7 +103,7 @@ export default function LetterModal({ onClose, onRestart, onOpenGarden }) {
             A veces son las risas, las conversaciones largas, los pequeños detalles o simplemente compartir tiempo juntos.
           </p>
           <p className="letter-paragraph">
-            Cada recuerdo contigo se guarda como algo especial. Y espero que todavía nos queden muchísimos momentos más por vivir.
+            Cada recuerdo contigo se guarda como algo especial.
           </p>
           <p className="letter-paragraph love-highlight">
             Eres la persona más grande e increíble que he conocido y quiero dar todo por ti. Deseo de todo corazón que Dios nos siga guiando juntos cada día y que Él sea siempre el centro de toda nuestra relación... ¡Te quiero muchooo! 💛✨
