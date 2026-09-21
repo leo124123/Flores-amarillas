@@ -82,44 +82,42 @@ export default function App() {
         onToggle={handleToggleMusic}
       />
 
-      {/* Main Experience Viewport */}
-      <main className="story-viewport">
-        <div className="story-card-body">
-          {step === 1 && (
-            <div className="step-fade-in">
-              <CoverScreen onNext={() => handleNextStep(2)} />
-            </div>
-          )}
+      {/* Main Experience Viewport or Fullscreen Animated Garden */}
+      {step === 5 ? (
+        <AnimatedGarden onBack={() => handleNextStep(4)} />
+      ) : (
+        <main className="story-viewport">
+          <div className="story-card-body">
+            {step === 1 && (
+              <div className="step-fade-in">
+                <CoverScreen onNext={() => handleNextStep(2)} />
+              </div>
+            )}
 
-          {step === 2 && (
-            <div className="step-fade-in">
-              <BouquetScreen onNext={() => handleNextStep(3)} />
-            </div>
-          )}
+            {step === 2 && (
+              <div className="step-fade-in">
+                <BouquetScreen onNext={() => handleNextStep(3)} />
+              </div>
+            )}
 
-          {step === 3 && (
-            <div className="step-fade-in">
-              <EnvelopeScreen onOpenLetter={() => handleNextStep(4)} />
-            </div>
-          )}
+            {step === 3 && (
+              <div className="step-fade-in">
+                <EnvelopeScreen onOpenLetter={() => handleNextStep(4)} />
+              </div>
+            )}
 
-          {step === 4 && (
-            <div className="step-fade-in">
-              <LetterModal
-                onClose={() => setStep(3)}
-                onRestart={handleRestart}
-                onOpenGarden={() => handleNextStep(5)}
-              />
-            </div>
-          )}
+            {step === 4 && (
+              <div className="step-fade-in">
+                <LetterModal
+                  onClose={() => setStep(3)}
+                  onRestart={handleRestart}
+                  onOpenGarden={() => handleNextStep(5)}
+                />
+              </div>
+            )}
+          </div>
 
-          {step === 5 && (
-            <AnimatedGarden onBack={() => handleNextStep(4)} />
-          )}
-        </div>
-
-        {/* Step Navigation Dots (Hidden when in immersive Garden) */}
-        {step !== 5 && (
+          {/* Step Navigation Dots */}
           <nav className="step-indicators" aria-label="Progreso de la sorpresa">
             {[1, 2, 3, 4].map((s) => (
               <button
@@ -131,8 +129,8 @@ export default function App() {
               />
             ))}
           </nav>
-        )}
-      </main>
+        </main>
+      )}
 
       {/* Footer message (Hidden in full-screen garden) */}
       {step !== 5 && (
